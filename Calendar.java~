@@ -1,0 +1,47 @@
+import java.io.PrintWriter;    //import for file write
+import java.io.File;
+public class Calendar{    
+    private BinaryTree<Event> calendarSearchTree; 
+    
+    public Calendar(){
+        this.calendarSearchTree = new BinaryTree<Event>(); 
+    }
+    //Add 
+    public boolean add(Event event){
+        return calendarSearchTree.add(event);
+    }
+    //Remove
+    public  void remove(Event event){
+        calendarSearchTree.remove(event);
+    }
+    public void print() throws Exception{
+        File outputFile = new File ("load.txt");
+        PrintWriter output = new PrintWriter(outputFile);
+        output.println(calendarSearchTree);
+        output.close();
+    }
+    public void printAll(){
+        System.out.println(calendarSearchTree);
+    }
+    //Clear
+    public void clear(){
+        calendarSearchTree.clear();
+    }
+    //Size
+    public void size(){
+        calendarSearchTree.size();
+    }
+    //Contains
+    public void contains(Event event){
+        if(calendarSearchTree.contains(event)){
+            System.out.println("Event found");
+        }
+        else{
+            System.out.println("Couldnt find event with this date");
+        }
+    }
+}
+  
+  
+ 
+  

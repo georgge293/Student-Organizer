@@ -1,0 +1,13 @@
+public class Assignment extends Event{
+    private String subject;
+
+    public Assignment(String date,String time,String note,String subject){
+        super(date,time,note);
+        this.subject = subject;
+    }
+    
+    @Override
+    public String toString(){
+        return (super.toString()+", Assignment: "+this.subject);
+    } 
+}
